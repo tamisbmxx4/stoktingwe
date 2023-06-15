@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <title>Stock Filter</title>
+  <title>Filter Stok Barang</title>
 </head>
 <body>
   <!--Vertical Navbar-->
@@ -24,91 +24,85 @@
       </div>
     </div>
     <form action="/logout?_method=DELETE" method="POST">
-      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Log Out</p></button></center>
+      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Keluar</p></button></center>
     </form>
     <h5 class="ui horizontal divider header text-primary">
-      MAIN
+      MENU
     </h5>
   
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
-        <a href="/" class="nav-link text-dark font-italic" >
+        <a href="/" class="nav-link text-dark font-italic">
                   <i class="home icon"></i>
                   Dashboard
               </a>
       </li>
-      <li class="nav-item">
-        <a href="/billing" class="nav-link text-dark font-italic">
-          <i class="rupee sign icon"></i>
-                  Bill
-              </a>
+      <a href="/billing" class="nav-link text-dark font-italic">
+        <p class="text-black"><i class=""></i>
+          Input Barang Keluar
+                </p>
+            </a>
       </li>
       <li class="nav-item">
         <a href="/orders" class="nav-link text-dark font-italic">
-          <i class="eye icon"></i>
-                  View Orders
+          <i class=""></i>
+                  Stok Barang Keluar
               </a>
       </li>
       <li class="nav-item">
         <a href="/viewstocks" class="nav-link text-dark font-italic">
-          <i class="tags icon"></i>
-                  View Stocks
+          <i class=""></i>
+                  Stok Barang
               </a>
       </li>
       <li class="nav-item">
         <a href="/stocks" class="nav-link text-dark font-italic">
-          <i class="plus circle icon"></i>
-                  Add Stock
+          <i class=""></i>
+                  Tambah Stok Barang
               </a>
       </li>
     </ul>
   
     <h5 class="ui horizontal divider header text-primary">
-      CUSTOMIZE
+      KATEGORI
     </h5>
   
     <ul class="nav flex-column bg-white mb-0">
-      <!-- <li class="nav-item">
-        <a href="/stocks" class="nav-link text-dark font-italic">
-                  <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
-                  Add Stock
-              </a>
-      </li> -->
       <li class="nav-item">
         <a href="/brands" class="nav-link text-dark font-italic">
           <i class="yelp icon"></i>
-                  Brand
+                  Merk
               </a>
       </li>
       <li class="nav-item">
         <a href="/categories" class="nav-link text-dark font-italic">
           <i class="bookmark icon"></i>
-                  Category
+                  Kategori
               </a>
       </li>
       <li class="nav-item">
         <a href="/sizes" class="nav-link text-dark font-italic">
           <i class="check square icon"></i>
-                  Size
+                  Satuan
               </a>
       </li>
     </ul>
-  
+
     <h5 class="ui horizontal divider header text-primary">
-      FILTERS
+      LAPORAN
     </h5>
   
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="/sales_filter" class="nav-link text-dark font-italic">
           <i class="yelp icon"></i>
-                  Sales
+                  Laporan Penjualan
               </a>
       </li>
       <li class="nav-item">
-        <a href="/stock_filter" class="nav-link text-dark font-italic" style="background: linear-gradient(to right, #0066eb 0%, #ff8ab3 68%);">
+        <a href="/stock_filter" class="nav-link text-dark font-italic">
           <i class="bookmark icon"></i>
-                  Stock
+          Total Keseluruhan Stok
               </a>
       </li>
     </ul>
@@ -124,7 +118,7 @@
     <!-- Page content -->
    
        <!-- <h1 class="text-primary">DASHBOARD</h1> -->
-       <h1>Stocks Filter</h1>
+       <h1>Penyaringan Stok Barang</h1>
        <br>
         <center><img class="ui large rounded image" src="stock_filter.svg"></center>
         <br>
@@ -132,19 +126,19 @@
         <div class="ui three column grid">
           <div class="row">
           <div class="column">
-          <h3>Select Filter</h3>
+          <h3>Pilih Stok</h3>
           </div>
           <div class="column">
             <div class="form-check form-check-inline form-switch">
                 <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="brand">
                 <label class="form-check-label" for="exampleRadios11">
-                    Brand
+                    Merk
                 </label>
             </div>
             <div class="form-check form-check-inline form-switch">
                  <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios22" value="category">
                 <label class="form-check-label" for="exampleRadios22">
-                    Category
+                    Kategori
                 </label>
             </div>
           
@@ -157,7 +151,7 @@
 
     <center>
     <div class="ui left corner labeled action input">
-      <button class="ui teal button" type="submit">Apply Filter</button>
+      <button class="ui teal button" type="submit">Cari Stok</button>
       <div class="ui corner label">
         <i class="asterisk icon"></i>
       </div>
@@ -167,7 +161,7 @@
   <% if (filter_type == 'brand') { %> 
     <center>
       <br>
-      <h2 class="text-primary">Showing Results for BRAND </h2>
+      <h2 class="text-primary">Menampilkan Hasil Dari Merk </h2>
       <br>
       <div class="ui container">
         <div class="ui card">
@@ -181,7 +175,7 @@
           </div>
           <div class="extra content">
             <div class="center aligned author">
-              Total Items in Stock
+              Total Stok Item
             </div>
           </div>
         </div>
@@ -189,9 +183,9 @@
     <table class="ui inverted violet table table-bordered" >
       <thead>
       <tr class="table-success">
-          <th>Brand <i class="yelp icon"></i></th>
-          <th>Stock Left<i class="cart arrow down icon"></i></th>
-          <th>Stock Value <i class="rupee sign icon"></i></th>
+          <th>Merk <i class="yelp icon"></i></th>
+          <th>Stok<i class="cart arrow down icon"></i></th>
+          <th>Total<i class="tags icon"></i></th>
       </tr>
   </thead>
   <tbody>
@@ -199,7 +193,7 @@
           <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
               <td><%= order.Brand %></td>
               <td><%= order.Count %></td>
-              <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+              <td><i class="tags icon"></i> <%= order.Amount %> </td> 
           </tr>
       <% }); %>
     </tbody>
@@ -210,7 +204,7 @@
   <% if (filter_type == 'category') { %> 
     <center>
       <br>
-      <h2 class="text-primary">Showing Results for Filter_Type = CATEGORY </h2>
+      <h2 class="text-primary">Menampilkan Hasil Dari Kategori</h2>
       <br>
       <div class="ui container">
         <div class="ui card">
@@ -231,9 +225,9 @@
     <table class="ui inverted violet table table-bordered" >
       <thead>
       <tr class="table-success">
-          <th>Category <i class="list icon"></i></th>
-          <th>Stock Left <i class="cart arrow down icon"></i></th>
-          <th>Stock Value <i class="rupee sign icon"></i></th>
+          <th>Kategori <i class="list icon"></i></th>
+          <th>Stok <i class="cart arrow down icon"></i></th>
+          <th>Total <i class="tags icon"></i></th>
       </tr>
   </thead>
   <tbody>
@@ -241,7 +235,7 @@
           <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
               <td><%= order.Category %></td>
               <td><%= order.Count %></td>
-              <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+              <td><i class="tags icon"></i> <%= order.Amount %> </td> 
           </tr>
       <% }); %>
     </tbody>

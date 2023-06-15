@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://unpkg.com/easyinvoice/dist/easyinvoice.min.js"></script>
-    <title>Bill</title>
+    <title>Barang Keluar</title>
   </head>
   <body>
     <!--Vertical Navbar-->
@@ -25,10 +25,10 @@
       </div>
     </div>
     <form action="/logout?_method=DELETE" method="POST">
-      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Log Out</p></button></center>
+      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Keluar</p></button></center>
     </form>
     <h5 class="ui horizontal divider header text-primary">
-      MAIN
+      MENU
     </h5>
   
     <ul class="nav flex-column bg-white mb-0">
@@ -39,72 +39,72 @@
               </a>
       </li>
       <li class="nav-item">
-        <a href="/billing" class="nav-link text-dark font-italic" style="background: linear-gradient(to right, #0066eb 0%, #ff8ab3 68%);">
-          <p class="text-white"><i class="rupee sign icon"></i>
-                  Bill
+        <a href="/billing" class="nav-link text-dark font-italic">
+          <p class="text-black"><i class=""></i>
+                  Input Barang Keluar
                   </p>
               </a>
       </li>
       <li class="nav-item">
         <a href="/orders" class="nav-link text-dark font-italic">
-          <i class="eye icon"></i>
-                  View Orders
+          <i class=""></i>
+                  Stok Barang Keluar
               </a>
       </li>
       <li class="nav-item">
         <a href="/viewstocks" class="nav-link text-dark font-italic">
-          <i class="tags icon"></i>
-                  View Stocks
+          <i class=""></i>
+                  Stok Barang
               </a>
       </li>
       <li class="nav-item">
         <a href="/stocks" class="nav-link text-dark font-italic">
-          <i class="plus circle icon"></i>
-                  Add Stock
+          <i class=""></i>
+                  Tambah Stok Barang
               </a>
       </li>
     </ul>
   
     <h5 class="ui horizontal divider header text-primary">
-      CUSTOMIZE
+      KATEGORI 
     </h5>
   
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="/brands" class="nav-link text-dark font-italic">
           <i class="yelp icon"></i>
-                  Brand
+                  Merk
               </a>
       </li>
       <li class="nav-item">
         <a href="/categories" class="nav-link text-dark font-italic">
           <i class="bookmark icon"></i>
-                  Category
+                  Kategori
               </a>
       </li>
       <li class="nav-item">
         <a href="/sizes" class="nav-link text-dark font-italic">
           <i class="check square icon"></i>
-                  Size
+                Satuan
               </a>
       </li>
     </ul>
 
     <h5 class="ui horizontal divider header text-primary">
-      FILTERS
+      LAPORAN 
     </h5>
   
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="/sales_filter" class="nav-link text-dark font-italic">
           <i class="yelp icon"></i>
-                  Sales
+                  Laporan Penjualan
               </a>
       </li>
       <li class="nav-item">
         <a href="/stock_filter" class="nav-link text-dark font-italic">
           <i class="bookmark icon"></i>
-                  Stock
+          Total Keseluruhan Stok
               </a>
       </li>
     </ul>
@@ -117,10 +117,10 @@
     <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="align justify icon"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
   
     <!-- Page content -->
-    <h1>Bill</h1>
+    <h1>Barang Keluar</h1>
     <center><img class="ui small rounded image" src="creditcard.svg"></center>
     <br>
-    <center><span class="btn btn-lg btn-primary btn_row_add_below_end">Add New Item <i class="shopping cart icon"></i></span></center>
+    <center><span class="btn btn-lg btn-primary btn_row_add_below_end">Tambahkan Barang Keluar <i class="shopping cart icon"></i></span></center>
     <br>
     <div class="ui fluid container">
     <form action="/submitbill" method="POST">
@@ -129,12 +129,12 @@
         <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
           <th>Item No.</th>
           <th>Item ID</th>
-          <th>Item Name</th>
-          <th>Category</th>
-          <th>Brand</th>
-          <th>Size</th>
-          <th>Amount</th>
-          <th>Phone Number</th>
+          <th>Nama Item</th>
+          <th>Ktegori</th>
+          <th>Merk</th>
+          <th>Satuan</th>
+          <th>Jumlah</th>
+          <th>Nomor Telepon</th>
         </tr>
       </thead>
       
@@ -146,13 +146,13 @@
             <div class="form-floating">
             <input type="text" class="form-control" id="itemid1" name="itemid1"  size="4" required>
             <label for="floatingInput">ID</label>
-            <button type="button" class="btn btn-outline-success" id="fetchitem1" onclick="fetchitem()">Get Item</button>
+            <button type="button" class="btn btn-outline-success" id="fetchitem1" onclick="fetchitem()">Cari Barang</button>
             </div>
         </td>
           <td class="table-primary">
             <div class="form-floating">
               <input type="text" class="form-control" id="itemname1" name="itemname1" size="4" required >
-              <label for="floatingInput">Name</label>
+              <label for="floatingInput">Nama</label>
               
           </div>
           </td>
@@ -164,7 +164,7 @@
                 <% }); %>
             
               </select>
-                <label for="floatingInput">Category</label>
+                <label for="floatingInput">Kategori</label>
             </div>
           </td>
           <td class="table-warning">
@@ -175,7 +175,7 @@
                 <% }); %>
            
               </select>
-                <label for="floatingInput">Brand</label>
+                <label for="floatingInput">Merk</label>
             </div>
           </td>
           <td class="table-warning">
@@ -186,20 +186,20 @@
                 <% }); %>
            
               </select>
-              <label for="floatingInput">Size</label>
+              <label for="floatingInput">Satuan</label>
             </div>
           </td>
           <td class="table-success"> 
             <div class="form-floating">
               <input type="number" class="form-control" id="amount1" name="amount1" value=0 min="0" max="99999" required>
-              <label for="floatingInput">Amount <i class="rupee sign icon"></i></label>
+              <label for="floatingInput">Jumlah <i class=""></i></label>
               
           </div>
           </td>
           <td class="table-primary">
             <div class="form-floating">
               <input type="text" class="form-control" id="customer1" name="customer1" size="4" required >
-              <label for="floatingInput">Phone<i class="phone volume icon"></i></label>
+              <label for="floatingInput">Nomor Telepon<i class="phone volume icon"></i></label>
             </div>
           </td>
         </tr>
@@ -208,30 +208,7 @@
         
      
         </table>
-        <center><button type="submit" class="ui teal submit button">Submit</button>
-          
-      </form>
-      
-      <button class="ui green submit button" type="button" onclick="downloadInvoice()">Download Bill</button></center>
-
-        <h4 class="ui horizontal divider header">
-          <i class="rupee sign icon"></i>
-         TOTAL CART VALUE
-        </h4>
-        <br>
-        <center>
-            <div class="card text-dark" style="width: 12rem;background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
-              
-              <div class="card-body">
-                <div class="form-floating">
-                  <input type="number" class="form-control" id="total" name="total" value=0  required disabled>
-                  <label for="floatingInput">Total Amount</label>
-                
-              </div>
-              </div>
-            </div>
-        </center> 
-        
+        <center><button type="submit" class="ui teal submit button">Kirim</button>
     </div>
     </div>
     
@@ -460,7 +437,7 @@
         var amount_num = (item_names[j].id).charAt((item_names[j].id).length-1)
         if(item_num == amount_num){
           let item_obj = {
-            "quantity": "1",
+            "quantity": "",
             "description": item_names[i].value,
             "tax": 0,
             "price": item_names[j].value
@@ -475,7 +452,7 @@
   }
   console.log(items_arr)
   return {
-    //"documentTitle": "RECEIPT", //Defaults to INVOICE
+    "documentTitle": "RECEIPT", //Defaults to INVOICE
     "currency": "INR",
     "taxNotation": "gst", //or gst
     "marginTop": 25,
@@ -483,15 +460,15 @@
     "marginLeft": 25,
     "marginBottom": 25,
     "logo": "https://i.pinimg.com/564x/47/7c/4c/477c4c269034cc0bc048409346ac83e9.jpg", //or base64
-    //"logoExtension": "png", //only when logo is base64
+    "logoExtension": "png", //only when logo is base64
     "sender": {
-      "company": "<shop-name>",
-      "address": "<shop-address>",
-      "zip": "<shop-zip>",
-      "city": "<shop-city>",
-      "country": "Mob. - <shop-owner-mobile-number>",
+      "company": "KHAWAN TINGWE",
+      "address": "shop-address",
+      "zip": "shop-zip",
+      "city": "shop-city",
+      "country": "Mob. - shop-owner-mobile-number",
        
-      "custom1": "GST No. - <shop-gst-no.>"
+      "custom1": "GST No. - shop-gst-no."
       //"custom2": "custom value 2",
       //"custom3": "custom value 3"
     },

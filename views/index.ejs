@@ -10,104 +10,117 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <title>Shanti Wear House</title>
+  <title>Khawan Tingwe Stok</title>
 </head>
 <body>
   <!--Vertical Navbar-->
-  <div class="vertical-nav bg-white" id="sidebar">
-    <div class="py-4 px-3 mb-4" style="background: linear-gradient(to top, #0066eb 0%, #ff8ab3 68%);">
-      <div class="media d-flex align-items-center"><img src="admin.svg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-        &emsp;<div class="media-body">
-          <h4 class="m-0"><p class="text-white"><shop-name></h4>
-            <p class="font-weight-light text-white mb-0">(Admin)</p>
-        </div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="styles.css">
+  <!--Semantic-UI CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://unpkg.com/easyinvoice/dist/easyinvoice.min.js"></script>
+  <title>Bill</title>
+</head>
+<body>
+  <!--Vertical Navbar-->
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4" style="background: linear-gradient(to top, #0066eb 0%, #ff8ab3 68%);">
+    <div class="media d-flex align-items-center"><img src="admin.svg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      &emsp;<div class="media-body">
+        <h4 class="m-0"><p class="text-white"><shop-name></h4>
+          <p class="font-weight-light text-white mb-0">(Admin)</p>
       </div>
     </div>
-    <form action="/logout?_method=DELETE" method="POST">
-      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Log Out</p></button></center>
-    </form>
-    <h5 class="ui horizontal divider header text-primary">
-      MAIN
-    </h5>
-  
-    <ul class="nav flex-column bg-white mb-0">
-      <li class="nav-item">
-        <a href="/" class="nav-link text-dark font-italic" style="background: linear-gradient(to right, #0066eb 0%, #ff8ab3 68%);">
-                  <p class="text-white"><i class="home icon"></i>
-                  Dashboard
-                </p>
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/billing" class="nav-link text-dark font-italic">
-          <i class="rupee sign icon"></i>
-                  Bill
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/orders" class="nav-link text-dark font-italic">
-          <i class="eye icon"></i>
-                  View Orders
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/viewstocks" class="nav-link text-dark font-italic">
-          <i class="tags icon"></i>
-                  View Stocks
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/stocks" class="nav-link text-dark font-italic">
-          <i class="plus circle icon"></i>
-                  Add Stock
-              </a>
-      </li>
-    </ul>
-  
-    <h5 class="ui horizontal divider header text-primary">
-      CUSTOMIZE
-    </h5>
-  
-    <ul class="nav flex-column bg-white mb-0">
-      <li class="nav-item">
-        <a href="/brands" class="nav-link text-dark font-italic">
-          <i class="yelp icon"></i>
-                  Brand
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/categories" class="nav-link text-dark font-italic">
-          <i class="bookmark icon"></i>
-                  Category
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/sizes" class="nav-link text-dark font-italic">
-          <i class="check square icon"></i>
-                  Size
-              </a>
-      </li>
-    </ul>
-  
-    <h5 class="ui horizontal divider header text-primary">
-      FILTERS
-    </h5>
-  
-    <ul class="nav flex-column bg-white mb-0">
-      <li class="nav-item">
-        <a href="/sales_filter" class="nav-link text-dark font-italic">
-          <i class="yelp icon"></i>
-                  Sales
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/stock_filter" class="nav-link text-dark font-italic">
-          <i class="bookmark icon"></i>
-                  Stock
-              </a>
-      </li>
-    </ul>
   </div>
+  <form action="/logout?_method=DELETE" method="POST">
+    <center><button type="submit" class="btn btn-danger" ><p class="text-white">Keluar</p></button></center>
+  </form>
+  <h5 class="ui horizontal divider header text-primary">
+    MENU
+  </h5>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="/" class="nav-link text-dark font-italic">
+                <i class="home icon"></i>
+                Dashboard
+            </a>
+<li class="nav-item">
+        <a href="/billing" class="nav-link text-dark font-italic">
+          <p class="text-black"><i class=""></i>
+            Input Barang Keluar
+                  </p>
+              </a>
+      </li>
+    </li>
+    <li class="nav-item">
+      <a href="/orders" class="nav-link text-dark font-italic">
+        <i class=""></i>
+                Stok Barang Keluar
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/viewstocks" class="nav-link text-dark font-italic">
+        <i class=""></i>
+                Stok Barang
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/stocks" class="nav-link text-dark font-italic">
+        <i class=""></i>
+                Tambah Stok Barang
+            </a>
+    </li>
+  </ul>
+
+  <h5 class="ui horizontal divider header text-primary">
+    KATEGORI
+  </h5>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="/brands" class="nav-link text-dark font-italic">
+        <i class="yelp icon"></i>
+                Merk
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/categories" class="nav-link text-dark font-italic">
+        <i class="bookmark icon"></i>
+                Kategori
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/sizes" class="nav-link text-dark font-italic">
+        <i class="check square icon"></i>
+                Satuan
+            </a>
+    </li>
+  </ul>
+
+  <h5 class="ui horizontal divider header text-primary">
+    LAPORAN
+  </h5>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="/sales_filter" class="nav-link text-dark font-italic">
+        <i class="yelp icon"></i>
+                Laporan Penjualan
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/stock_filter" class="nav-link text-dark font-italic">
+        <i class="bookmark icon"></i>
+        Total Keseluruhan Stok
+            </a>
+    </li>
+  </ul>
+</div>
   <!-- End vertical navbar -->
   
   
@@ -117,9 +130,8 @@
     <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="align justify icon"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
   
     <!-- Page content -->
-    
     <br>
-    <h1>Dashboard</h1>
+    <h1>Khawan Tingwe Stock</h1>
     <br>
     <center><img class="ui large rounded image" src="dashboard.svg"></center>
     <br>
@@ -135,36 +147,15 @@
             <div class="ui statistic">
                 <div class="value">
                   <p class="text-white">
-                  <span>&#8377;</span>
+                  <span></span>
                  <% total_sales.forEach(function(order){ %>
                     <%= order.TotalItemsOrdered %>
                   <% }); %>
                 </p>
                 </div>
                 <div class="label">
-                  Total Sales
+                  Total barang Keluar
                 </div>
-            </div>
-          </center>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="ui fluid card text-white bg-primary">
-          
-          <div class="fluid content">
-            <center>
-            <div class="ui statistic">
-              <div class="value">
-                <p class="text-white">
-                  <i class="shopping cart icon"></i><% ord_num.forEach(function(order){ %>
-                  <%= order. NumberOfProducts %>
-                <% }); %>
-                </p>
-              </div>
-              <div class="label">
-                Total Orders
-              </div>
             </div>
           </center>
           </div>
@@ -177,42 +168,20 @@
             <div class="ui statistic">
               <div class="value">
                 <p class="text-white">
-                  <i class="tags icon"></i><% stock_num.forEach(function(order){ %>
+                  <i class=""></i><% stock_num.forEach(function(order){ %>
                   <%= order. NumberOfProducts %>
                 <% }); %>
                 </p>
               </div>
               <div class="label">
-                Total Stock
+                Total Stok Barang
               </div>
             </div>
           </center>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="ui fluid card text-white bg-info">
-          
-          <div class="fluid content">
-            <center>
-            <div class="ui statistic">
-              <div class="value">
-                <p class="text-white">
-                  <i class="rupee sign icon"></i><% total_stock.forEach(function(order){ %>
-                  <%= order. TotalItemsOrdered %>
-                <% }); %>
-                </p>
-              </div>
-              <div class="label">
-                Total Stock Value
-              </div>
-            </div>
-          </center>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <!-- End demo content -->
   
   
@@ -236,5 +205,3 @@
   </script>
 </body>
 </html>
-
-

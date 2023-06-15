@@ -11,107 +11,117 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <title>Sales Filter</title>
+  <title>Filter Laporan</title>
 </head>
 <body>
   <!--Vertical Navbar-->
-  <div class="vertical-nav bg-white" id="sidebar">
-    <div class="py-4 px-3 mb-4" style="background: linear-gradient(to top, #0066eb 0%, #ff8ab3 68%);">
-      <div class="media d-flex align-items-center"><img src="admin.svg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-        &emsp;<div class="media-body">
-          <h4 class="m-0"><p class="text-white"><shop-name></h4>
-            <p class="font-weight-light text-white mb-0">(Admin)</p>
-        </div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="styles.css">
+  <!--Semantic-UI CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://unpkg.com/easyinvoice/dist/easyinvoice.min.js"></script>
+  <title>Bill</title>
+</head>
+<body>
+  <!--Vertical Navbar-->
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4" style="background: linear-gradient(to top, #0066eb 0%, #ff8ab3 68%);">
+    <div class="media d-flex align-items-center"><img src="admin.svg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      &emsp;<div class="media-body">
+        <h4 class="m-0"><p class="text-white"><shop-name></h4>
+          <p class="font-weight-light text-white mb-0">(Admin)</p>
       </div>
     </div>
-    <form action="/logout?_method=DELETE" method="POST">
-      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Log Out</p></button></center>
-    </form>
-    <h5 class="ui horizontal divider header text-primary">
-      MAIN
-    </h5>
-  
-    <ul class="nav flex-column bg-white mb-0">
-      <li class="nav-item">
-        <a href="/" class="nav-link text-dark font-italic" >
-                  <i class="home icon"></i>
-                  Dashboard
-                
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/billing" class="nav-link text-dark font-italic">
-          <i class="rupee sign icon"></i>
-                  Bill
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/orders" class="nav-link text-dark font-italic">
-          <i class="eye icon"></i>
-                  View Orders
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/viewstocks" class="nav-link text-dark font-italic">
-          <i class="tags icon"></i>
-                  View Stocks
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/stocks" class="nav-link text-dark font-italic">
-          <i class="plus circle icon"></i>
-                  Add Stock
-              </a>
-      </li>
-    </ul>
-  
-    <h5 class="ui horizontal divider header text-primary">
-      CUSTOMIZE
-    </h5>
-  
-    <ul class="nav flex-column bg-white mb-0">
-      <li class="nav-item">
-        <a href="/brands" class="nav-link text-dark font-italic">
-          <i class="yelp icon"></i>
-                  Brand
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/categories" class="nav-link text-dark font-italic">
-          <i class="bookmark icon"></i>
-                  Category
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/sizes" class="nav-link text-dark font-italic">
-          <i class="check square icon"></i>
-                  Size
-              </a>
-      </li>
-    </ul>
-  
-    <h5 class="ui horizontal divider header text-primary">
-      FILTERS
-    </h5>
-  
-    <ul class="nav flex-column bg-white mb-0">
-      <li class="nav-item">
-        <a href="/sales_filter" class="nav-link text-dark font-italic" style="background: linear-gradient(to right, #0066eb 0%, #ff8ab3 68%);">
-          <i class="yelp icon"></i>
-                  Sales
-              </a>
-      </li>
-      <li class="nav-item">
-        <a href="/stock_filter" class="nav-link text-dark font-italic">
-          <i class="bookmark icon"></i>
-                  Stock
-              </a>
-      </li>
-    </ul>
   </div>
-  <!-- End vertical navbar -->
-  
-  
+  <form action="/logout?_method=DELETE" method="POST">
+    <center><button type="submit" class="btn btn-danger" ><p class="text-white">Keluar</p></button></center>
+  </form>
+  <h5 class="ui horizontal divider header text-primary">
+    MENU
+  </h5>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="/" class="nav-link text-dark font-italic">
+                <i class="home icon"></i>
+                Dashboard
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/billing" class="nav-link text-dark font-italic">
+        <p class="text-black"><i class=""></i>
+          Input Barang Keluar
+                </p>
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/orders" class="nav-link text-dark font-italic">
+        <i class=""></i>
+                Stok Barang Keluar
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/viewstocks" class="nav-link text-dark font-italic">
+        <i class=""></i>
+                Stok Barang
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/stocks" class="nav-link text-dark font-italic">
+        <i class=""></i>
+                Tambah Stok Barang
+            </a>
+    </li>
+  </ul>
+
+  <h5 class="ui horizontal divider header text-primary">
+    KATEGORI
+  </h5>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="/brands" class="nav-link text-dark font-italic">
+        <i class="yelp icon"></i>
+                Merk
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/categories" class="nav-link text-dark font-italic">
+        <i class="bookmark icon"></i>
+                Kategori
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/sizes" class="nav-link text-dark font-italic">
+        <i class="check square icon"></i>
+                Satuan
+            </a>
+    </li>
+  </ul>
+
+  <h5 class="ui horizontal divider header text-primary">
+    LAPORAN
+  </h5>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="/sales_filter" class="nav-link text-dark font-italic">
+        <i class="yelp icon"></i>
+                Laporan Penjualan
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="/stock_filter" class="nav-link text-dark font-italic">
+        <i class="bookmark icon"></i>
+        Total Keseluruhan Stok
+            </a>
+    </li>
+  </ul>
+</div>
   <!-- Page content holder -->
   <div class="page-content p-5" id="content" style="background: linear-gradient(to right, #e9edf1 47%, #ff8ab3 100%); ">
     <!-- Toggle button -->
@@ -120,7 +130,7 @@
     <!-- Page content -->
    
     <br>
-    <h1>SALES FILTER</h1>
+    <h1>Filter Laporan</h1>
     <br>
     <center><img class="ui medium rounded image" src="sales_filter.svg"></center>
     <br>
@@ -128,26 +138,26 @@
     <div class="ui four column grid">
     <div class="row">
     <div class="column">
-    <h3>Select Time Period</h3>
+    <h3>Pilih Jangka Waktu</h3>
     </div>
     
     <div class="column">
       <div class="form-check form-check-inline form-switch">
           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="month" oninput="myFunction()">
           <label class="form-check-label" for="exampleRadios2">
-              Month
+              Bulan
           </label>
       </div>
       <div class="form-check form-check-inline form-switch">
           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="year" oninput="myFunction()">
           <label class="form-check-label" for="exampleRadios3">
-              Year
+              Tahun
           </label>
       </div>
     </div>
     <div class="column">
         <select class="form-select" aria-label="Disabled select example" id="month" name="selected_month" disabled>
-            <option selected>Select Month</option>
+            <option selected>Pilih Bulan</option>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -164,9 +174,7 @@
     </div>
     <div class="column">
         <select class="form-select" aria-label="Disabled select example" id="year" name="selected_year" disabled>
-            <option selected>Select Year</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
+            <option selected>Pilih Tahun</option>
             <option value="2023">2023</option>
             <option value="2024">2024</option>
             <option value="2025">2025</option>
@@ -177,25 +185,25 @@
     
     <div class="row">
     <div class="column">
-    <h3>Filter By</h3>
+    <h3>Pilihan Kategori</h3>
     </div>
     <div class="column">
     <div class="form-check form-check-inline form-switch">
         <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios10" value="all">
         <label class="form-check-label" for="exampleRadios10">
-            All
+            Keseluruhan
         </label>
     </div>
     <div class="form-check form-check-inline form-switch">
         <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="brand">
         <label class="form-check-label" for="exampleRadios11">
-            Brand
+            Merk
         </label>
     </div>
     <div class="form-check form-check-inline form-switch">
          <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios22" value="category">
         <label class="form-check-label" for="exampleRadios22">
-            Category
+            Kategori
         </label>
     </div>
   
@@ -207,7 +215,7 @@
     <br>
     <center>
     <div class="ui left corner labeled action input">
-      <button class="ui teal button" type="submit">Apply Filter</button>
+      <button class="ui teal button" type="submit">Terapkan Filter</button>
       <div class="ui corner label">
         <i class="asterisk icon"></i>
       </div>
@@ -218,14 +226,13 @@
     <br>
   
     <% if (time_type == 'month') { %>
-      
       <% if (filter_type == 'all') { %> 
         <div class="ui container">
           <canvas id="myChart"></canvas>
         </div>
         <div id="chartdata" class="chartdata" name="chartdata" value="<%= display_content %> "></div>
       <center>
-        <h2 class="text-primary">Showing Results for <%= month_name %> (<%= year %>), Filter_Type = ALL</h2>
+        <h2 class="text-primary">Menampilkan Hasil untuk <%= month_name %> (<%= year %>), Berdasarkan = Keseluruhan</h2>
         <br>
         <div class="ui two column grid">
           <div class="row">
@@ -234,14 +241,14 @@
             <div class="content">
               <div class="center aligned header"></div>
               <div class="center aligned description">
-                <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                <h1 class="text-success"><i class="tags icon"></i><% total_amount.forEach(function(order){ %>
                   <%= order.Amount %>
                 <% }); %></h1>
               </div>
             </div>
             <div class="extra content">
               <div class="center aligned author text-danger">
-                <i class="rupee sign icon"></i> Total Sales in <%= month_name %> <%= year %> 
+                <i class="tags icon"></i> Total Pengeluaran <%= month_name %> <%= year %> 
               </div>
             </div>
           </div>
@@ -258,7 +265,7 @@
               </div>
               <div class="extra content">
                 <div class="center aligned author text-danger">
-                  <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %> 
+                  <i class="shopping cart icon"></i> Item Barang Terjual <%= month_name %> <%= year %> 
                 </div>
               </div>
             </div>
@@ -268,9 +275,9 @@
         <table class="ui inverted violet table table-bordered" >
           <thead>
           <tr class="table-success">
-              <th>Date <i class="calendar alternate outline icon"></i></th>
-              <th>Items Sold <i class="cart arrow down icon"></i></th>
-              <th>Total Sales <i class="rupee sign icon"></i></th>
+              <th>Tanggal <i class="calendar alternate outline icon"></i></th>
+              <th>Item Keluar<i class="cart arrow down icon"></i></th>
+              <th>Total Pengeluaran <i class="tags icon"></i></th>
           </tr>
       </thead>
       <tbody>
@@ -279,7 +286,7 @@
                  
                   <td><%= order.TransactionDate %></td>
                   <td><%= order.Count %></td>
-                  <td><i class="rupee sign icon"></i> <%= order.Amount %></td>
+                  <td><i class="tags icon"></i> <%= order.Amount %></td>
               </tr>
           <% }); %>
         </tbody>
@@ -289,7 +296,7 @@
 
         <% if (filter_type == 'brand') { %> 
           <center>
-            <h2 class="text-primary">Showing Results for <%= month_name %> (<%= year %>), Filter_Type = BRAND </h2>
+            <h2 class="text-primary">Menampilkan Hasil untuk <%= month_name %> (<%= year %>), Berdasarkan = Merk </h2>
             <br>
             <div class="ui container">
               <canvas id="myChart"></canvas>
@@ -302,14 +309,14 @@
                 <div class="content">
                   <div class="center aligned header"></div>
                   <div class="center aligned description">
-                    <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                    <h1 class="text-success"><i class="tags icon"></i><% total_amount.forEach(function(order){ %>
                       <%= order.Amount %>
                     <% }); %></h1>
                   </div>
                 </div>
                 <div class="extra content">
                   <div class="center aligned author text-danger">
-                    <i class="rupee sign icon"></i> Total Sales in <%= month_name %> <%= year %> 
+                    <i class="tags icon"></i> Total Pengeluaran pada <%= month_name %> <%= year %> 
                   </div>
                 </div>
               </div>
@@ -326,7 +333,7 @@
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %> 
+                      <i class="shopping cart icon"></i> Item Barang Terjual <%= month_name %> <%= year %> 
                     </div>
                   </div>
                 </div>
@@ -336,9 +343,9 @@
           <table class="ui inverted violet table table-bordered" >
             <thead>
             <tr class="table-success">
-                <th>Brand <i class="yelp icon"></i></th>
-                <th>Items Sold <i class="cart arrow down icon"></i></th>
-                <th>Total Sales <i class="rupee sign icon"></i></th>
+                <th>Merk <i class="yelp icon"></i></th>
+                <th>Item Pengeluaran <i class="cart arrow down icon"></i></th>
+                <th>Total Item <i class="tags icon"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -346,7 +353,7 @@
                 <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                     <td><%= order.Brand %></td>
                     <td><%= order.Count %></td>
-                    <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                    <td><i class="tags icon"></i> <%= order.Amount %> </td> 
                 </tr>
             <% }); %>
           </tbody>
@@ -356,7 +363,7 @@
 
         <% if (filter_type == 'category') { %> 
           <center>
-            <h2 class="text-primary">Showing Results for <%= month_name %> (<%= year %>), Filter_Type = CATEGORY </h2>
+            <h2 class="text-primary">Menampilkan Hasil untuk <%= month_name %> (<%= year %>), Berdasarkan = Kategori </h2>
             <br>
             <div class="ui two column grid">
               <div class="row">
@@ -365,14 +372,14 @@
                 <div class="content">
                   <div class="center aligned header"></div>
                   <div class="center aligned description">
-                    <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                    <h1 class="text-success"><i class="tags icon"></i><% total_amount.forEach(function(order){ %>
                       <%= order.Amount %>
                     <% }); %></h1>
                   </div>
                 </div>
                 <div class="extra content">
                   <div class="center aligned author text-danger">
-                    <i class="rupee sign icon"></i> Total Sales in <%= month_name %> <%= year %> 
+                    <i class="tags icon"></i> Total Pengeluaran <%= month_name %> <%= year %> 
                   </div>
                 </div>
               </div>
@@ -389,7 +396,7 @@
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %> 
+                      <i class="shopping cart icon"></i> Total Pengeluaran Item <%= month_name %> <%= year %> 
                     </div>
                   </div>
                 </div>
@@ -401,7 +408,7 @@
             <tr class="table-success">
                 <th>Category <i class="list icon"></i></th>
                 <th>Items Sold <i class="cart arrow down icon"></i></th>
-                <th>Total Sales <i class="rupee sign icon"></i></th>
+                <th>Total Item  <i class="tags icon"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -409,7 +416,7 @@
                 <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                     <td><%= order.Category %></td>
                     <td><%= order.Count %></td>
-                    <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                    <td><i class="tags icon"></i> <%= order.Amount %> </td> 
                 </tr>
             <% }); %>
           </tbody>
@@ -425,7 +432,7 @@
         "July", "August", "September", "October", "November", "December"]; %> 
         <% if (filter_type == 'all') { %> 
         <center>
-          <h2 class="text-primary">Showing Results for (<%= year %>), Filter_Type = ALL</h2>
+          <h2 class="text-primary">Menampilkan Hasil untuk (<%= year %>), Berdasarkan = Keseluruhan</h2>
           <br>
           <div class="ui two column grid">
             <div class="row">
@@ -434,14 +441,14 @@
               <div class="content">
                 <div class="center aligned header"></div>
                 <div class="center aligned description">
-                  <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                  <h1 class="text-success"><i class="tags icon"></i><% total_amount.forEach(function(order){ %>
                     <%= order.Amount %>
                   <% }); %></h1>
                 </div>
               </div>
               <div class="extra content">
                 <div class="center aligned author text-danger">
-                  <i class="rupee sign icon"></i> Total Sales in <%= year %> 
+                  <i class="tags icon"></i> Total Pengeluaran Barang <%= year %> 
                 </div>
               </div>
             </div>
@@ -458,7 +465,7 @@
                 </div>
                 <div class="extra content">
                   <div class="center aligned author text-danger">
-                    <i class="shopping cart icon"></i> Total Items Sold in <%= year %> 
+                    <i class="shopping cart icon"></i> Item Barang Terjual <%= year %> 
                   </div>
                 </div>
               </div>
@@ -468,9 +475,9 @@
           <table class="ui inverted violet table table-bordered" >
             <thead>
             <tr class="table-success">
-                <th>Month <i class="calendar alternate outline icon"></i></th>
-                <th>Items Sold <i class="cart arrow down icon"></i></th>
-                <th>Total Sales <i class="rupee sign icon"></i></th>
+                <th>Bulan <i class="calendar alternate outline icon"></i></th>
+                <th>Item Terjual <i class="cart arrow down icon"></i></th>
+                <th>Total Item  <i class="tags icon"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -479,7 +486,7 @@
                    
                     <td><%= monthNames[parseInt(order.TMonth)-1] %></td>
                     <td><%= order.Count %></td>
-                    <td><i class="rupee sign icon"></i> <%= order.Amount %></td>
+                    <td><i class="tags icon"></i> <%= order.Amount %></td>
                 </tr>
             <% }); %>
           </tbody>
@@ -489,7 +496,7 @@
   
           <% if (filter_type == 'brand') { %> 
             <center>
-              <h2 class="text-primary">Showing Results for (<%= year %>), Filter_Type = BRAND </h2>
+              <h2 class="text-primary">Menampilkan Hasil untuk(<%= year %>), Berdasarkan = Merk </h2>
               <br>
               <div class="ui two column grid">
                 <div class="row">
@@ -498,14 +505,14 @@
                   <div class="content">
                     <div class="center aligned header"></div>
                     <div class="center aligned description">
-                      <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                      <h1 class="text-success"><i class="tags icon"></i><% total_amount.forEach(function(order){ %>
                         <%= order.Amount %>
                       <% }); %></h1>
                     </div>
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="rupee sign icon"></i> Total Sales in <%= year %> 
+                      <i class="tags icon"></i> Total Pengeluaran Barang <%= year %> 
                     </div>
                   </div>
                 </div>
@@ -522,7 +529,7 @@
                     </div>
                     <div class="extra content">
                       <div class="center aligned author text-danger">
-                        <i class="shopping cart icon"></i> Total Items Sold in <%= year %> 
+                        <i class="shopping cart icon"></i> Item Barang Terjual <%= year %> 
                       </div>
                     </div>
                   </div>
@@ -534,7 +541,7 @@
               <tr class="table-success">
                   <th>Brand <i class="yelp icon"></i></th>
                   <th>Items Sold <i class="cart arrow down icon"></i></th>
-                  <th>Total Sales <i class="rupee sign icon"></i></th>
+                  <th>Total Item  <i class="tags icon"></i></th>
               </tr>
           </thead>
           <tbody>
@@ -542,7 +549,7 @@
                   <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                       <td><%= order.Brand %></td>
                       <td><%= order.Count %></td>
-                      <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                      <td><i class="tags icon"></i> <%= order.Amount %> </td> 
                   </tr>
               <% }); %>
             </tbody>
@@ -552,7 +559,7 @@
   
           <% if (filter_type == 'category') { %> 
             <center>
-              <h2 class="text-primary">Showing Results for (<%= year %>), Filter_Type = CATEGORY </h2>
+              <h2 class="text-primary">Menampilkan Hasil untuk (<%= year %>), Berdasarkan = Kategori </h2>
               <br>
               <div class="ui two column grid">
                 <div class="row">
@@ -561,14 +568,14 @@
                   <div class="content">
                     <div class="center aligned header"></div>
                     <div class="center aligned description">
-                      <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                      <h1 class="text-success"><i class="tags icon"></i><% total_amount.forEach(function(order){ %>
                         <%= order.Amount %>
                       <% }); %></h1>
                     </div>
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="rupee sign icon"></i> Total Sales in <%= year %> 
+                      <i class="tags icon"></i> Total Pengeluaran Barang <%= year %> 
                     </div>
                   </div>
                 </div>
@@ -585,7 +592,7 @@
                     </div>
                     <div class="extra content">
                       <div class="center aligned author text-danger">
-                        <i class="shopping cart icon"></i> Total Items Sold in <%= year %> 
+                        <i class="shopping cart icon"></i> Item Barang Terjual <%= year %> 
                       </div>
                     </div>
                   </div>
@@ -595,9 +602,9 @@
             <table class="ui inverted violet table table-bordered" >
               <thead>
               <tr class="table-success">
-                  <th>Category <i class="list icon"></i></th>
-                  <th>Items Sold <i class="cart arrow down icon"></i></th>
-                  <th>Total Sales <i class="rupee sign icon"></i></th>
+                  <th>Kategori <i class="list icon"></i></th>
+                  <th>Item Keluar <i class="cart arrow down icon"></i></th>
+                  <th>Total Pengeluaran <i class="tags icon"></i></th>
               </tr>
           </thead>
           <tbody>
@@ -605,7 +612,7 @@
                   <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                       <td><%= order.Category %></td>
                       <td><%= order.Count %></td>
-                      <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                      <td><i class="tags icon"></i> <%= order.Amount %> </td> 
                   </tr>
               <% }); %>
             </tbody>
